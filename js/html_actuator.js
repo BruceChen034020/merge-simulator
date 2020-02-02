@@ -65,24 +65,24 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   const mapping = {
-    2: "南台科大",
-    4: "中台科大",
-    8: "台北城市科大",
-    16: "台灣大學",
-    32: "台灣首府大學",
+    2: "國際一流大學",
+    4: "陽明交通大學",
+    8: "偉大大學",
+    16: "台灣聯合大學",
+    32: "縱貫大學",
     64: "亞洲大學",
-    128: "屏科",
-    256: "虎科",
-    512: "雲科",
-    1024: "台科",
-    2048: "開山科大"
+    128: "世界大學",
+    256: "太陽系大學",
+    512: "銀河大學",
+    1024: "宇宙大學",
+    2048: "IHSCA大學"
   }
 
   inner.classList.add("tile-inner");
   if (tile.value <= 2048)
     inner.textContent = mapping[tile.value];
   else
-    inner.textContent = "開山科大 lv." + (Math.log2(tile.value) - 10);
+    inner.textContent = "宇宙IHSCA大學 lv." + (Math.log2(tile.value) - 10);
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -157,7 +157,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (won) {
   var type = won ? "game-won" : "game-over";
-  var message = won ? "乂國立開山科大乂" : "垃圾學店下去888";
+  var message = won ? "乂宇宙IHSCA大學乂" : "垃圾學店下去888";
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
