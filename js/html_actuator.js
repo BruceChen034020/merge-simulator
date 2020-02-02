@@ -70,7 +70,7 @@ HTMLActuator.prototype.addTile = function (tile) {
     8: "偉大大學",
     16: "台灣聯合大學",
     32: "縱貫大學",
-    64: "亞洲大學",
+    64: "亞太首府大學",
     128: "世界大學",
     256: "太陽系大學",
     512: "銀河大學",
@@ -131,7 +131,7 @@ HTMLActuator.prototype.positionClass = function (position) {
 
 HTMLActuator.prototype.score2rank = function (score) {
   return Math.max(Math.floor(
-    1000 - (Math.min(score, 5000) * 0.1 + Math.max(score - 5000, 0) * 0.03)
+    200 - (Math.min(score, 5000) * 0.1 + Math.max(score - 5000, 0) * 0.03)
   ), 1);
 }
 HTMLActuator.prototype.updateScore = function (score) {
@@ -140,7 +140,7 @@ HTMLActuator.prototype.updateScore = function (score) {
   var difference = this.score2rank(this.score) - this.score2rank(score);
   this.score = score;
 
-  this.scoreContainer.textContent = this.score2rank(this.score) >= 1000 ? "1000+ 名" : this.score2rank(this.score) + "名";
+  this.scoreContainer.textContent = this.score2rank(this.score) >= 200 ? "200+ 名" : this.score2rank(this.score) + "名";
 
   if (difference > 0) {
     var addition = document.createElement("div");
@@ -152,7 +152,7 @@ HTMLActuator.prototype.updateScore = function (score) {
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = this.score2rank(this.score) >= 1000 ? "1000+ 名" : this.score2rank(this.score) + "名";
+  this.bestContainer.textContent = this.score2rank(this.score) >= 200 ? "200+ 名" : this.score2rank(this.score) + "名";
 };
 
 HTMLActuator.prototype.message = function (won) {
