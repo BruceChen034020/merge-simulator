@@ -1,6 +1,6 @@
 # 併校模擬器 | Merge Simulator
 
-https://splitline.github.io/merge-simulator/
+https://brucechen034020.github.io/merge-simulator/
 
 ## How To Play
 併校刷國際排名！
